@@ -39,15 +39,19 @@ function createCard(data, index) {
   }
 
   card.innerHTML = `
-    <div class="inner-card">
-    <div class ="inner-card-front">
-     <p> ${data.question} </p>
-     </div>
-     <div class="inner-card-back>
-     <p>
-     ${data.answer} </p>
-     </div>
-     </div>`;
+  <div class="inner-card">
+  <div class="inner-card-front">
+    <p>
+      ${data.question}
+    </p>
+  </div>
+  <div class="inner-card-back">
+    <p>
+      ${data.answer}
+    </p>
+  </div>
+</div>
+  `;
 
   card.addEventListener("click", () => card.classList.toggle("show-answer"));
 
