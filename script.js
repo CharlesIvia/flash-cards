@@ -80,6 +80,8 @@ function setCardsData(cards) {
   window.location.reload();
 }
 
+createCards();
+
 //Event listeners
 
 //Next button
