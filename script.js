@@ -1,5 +1,3 @@
-const { updateExpression } = require("@babel/types");
-
 //Fetch dom elements and set variables
 const cardsContainer = document.getElementById(".cards-container"),
   prevBtn = document.getElementById("prev"),
@@ -95,3 +93,21 @@ function setCardsData(card) {
   localStorage.setItem("cards", JSON.stringify(cards));
   window.location.reload();
 }
+
+//Event listeners
+
+//Next button
+
+nextBtn.addEventListener("click", () => {
+  cardsEl[currentActiveCard].className = "card left";
+
+  currentActiveCard = currentActiveCard + 1;
+
+  if (currentActiveCard > cardsEl.length - 1) {
+    currentActiveCard = cardsEl.length - 1;
+  }
+
+  cardsEl[currentActiveCard].className = "card active";
+
+  updateCurrentText();
+});
