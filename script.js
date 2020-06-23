@@ -1,3 +1,5 @@
+const { updateExpression } = require("@babel/types");
+
 //Fetch dom elements and set variables
 const cardsContainer = document.getElementById(".cards-container"),
   prevBtn = document.getElementById("prev"),
@@ -70,4 +72,26 @@ function createCard(data, index) {
   cardsEl.push(card);
 
   cardsContainer.appendChild(card);
+
+  updateCurrentText();
+}
+
+//Show number of cards
+
+function updateCurrentText() {
+  currentEl.innerText = `${currentActiveCard + 1}/${cardsEl.length}`;
+}
+
+//Get cards from local storage
+
+function getCardData() {
+  const cards = JSON.parse(localStorage.getItem("cards"));
+  return cards === null ? [] : cards;
+}
+
+//Add card to local storage
+
+function setCardsData(card) {
+  localStorage.setItem("cards", JSON.stringify(cards));
+  window.location.reload();
 }
