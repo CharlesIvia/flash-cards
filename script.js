@@ -111,3 +111,19 @@ nextBtn.addEventListener("click", () => {
 
   updateCurrentText();
 });
+
+//Prev button
+
+prevBtn.addEventListener("click", () => {
+  cardsEl[currentActiveCard].className = "card right";
+
+  currentActiveCard = currentActiveCard - 1;
+
+  if (currentActiveCard < 0) {
+    currentActiveCard = 0;
+  }
+
+  cardsEl[currentActiveCard].className = "card active";
+
+  updateCurrentText();
+});
