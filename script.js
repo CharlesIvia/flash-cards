@@ -1,5 +1,5 @@
 //Fetch dom elements and set variables
-const cardsContainer = document.getElementById(".cards-container"),
+const cardsContainer = document.getElementById("cards-container"),
   prevBtn = document.getElementById("prev"),
   nextBtn = document.getElementById("next"),
   currentEl = document.getElementById("current"),
@@ -19,22 +19,8 @@ let currentActiveCard = 0;
 
 const cardsEl = [];
 
-//Create dummy card data
-
-const cardsData = [
-  {
-    question: "What must a variable begin with?",
-    answer: "A letter, $ or _",
-  },
-  {
-    question: "What is a variable?",
-    answer: "Container for a piece of data",
-  },
-  {
-    question: "Example of Case Sensitive Variable",
-    answer: "thisIsAVariable",
-  },
-];
+// Store card data
+const cardsData = getCardsData();
 
 //Create all cards
 
@@ -82,14 +68,14 @@ function updateCurrentText() {
 
 //Get cards from local storage
 
-function getCardData() {
+function getCardsData() {
   const cards = JSON.parse(localStorage.getItem("cards"));
   return cards === null ? [] : cards;
 }
 
 //Add card to local storage
 
-function setCardsData(card) {
+function setCardsData(cards) {
   localStorage.setItem("cards", JSON.stringify(cards));
   window.location.reload();
 }
