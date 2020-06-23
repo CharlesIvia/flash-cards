@@ -1,0 +1,12 @@
+//Fetch dom elements and set variables
+const cardsContainer = document.getElementById(".cards-container"),
+  prevBtn = document.getElementById("prev"),
+  nextBtn = document.getElementById("next"),
+  currentEl = document.getElementById("current"),
+  showBtn = document.getElementById("show"),
+  hideBtn = document.getElementById("hide"),
+  questionEl = document.getElementById("question"),
+  answerEl = document.getElementById("answer"),
+  addCardBtn = document.getElementById("add-card"),
+  clearBtn = document.getElementById("clear"),
+  addContainer = document.getElementById("add-container");
